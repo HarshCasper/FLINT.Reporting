@@ -31,6 +31,10 @@ jobs:
         run: |
           npm install -g @angular/cli
           npm install
+          
+      - name: Test
+        run: |
+          npm test
 
       - name: Build UI
         run: |
