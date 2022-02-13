@@ -1,13 +1,6 @@
 name: FLINT Reporting Docker Images CI/CD
 
 on:
-  schedule:
-    - cron: "0 0 * * MON"
-
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
-    branches: [master]
-
   push:
     branches: [ master ]
     # Publish semver tags as releases.
@@ -50,7 +43,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.client
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.client
 
       - name: Build Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -103,7 +96,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.accountabilities
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.accountabilities
           
       - name: Build with Maven
         run: |
@@ -148,7 +141,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.vegetation-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.vegetation-types
           
       - name: Build with Maven
         run: |
@@ -193,7 +186,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.vegetation-history-vegetation-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.vegetation-history-vegetation-types
           
       - name: Build with Maven
         run: |
@@ -238,7 +231,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.units
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.units
           
       - name: Build with Maven
         run: |
@@ -283,7 +276,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.unit-categories
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.unit-categories
           
       - name: Build with Maven
         run: |
@@ -328,7 +321,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.tasks
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.tasks
           
       - name: Build with Maven
         run: |
@@ -373,7 +366,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.task-manager
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.task-manager
           
       - name: Build with Maven
         run: |
@@ -418,7 +411,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.reporting-tables
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.reporting-tables
           
       - name: Build with Maven
         run: |
@@ -463,7 +456,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.reporting-variables
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.reporting-variables
 
       - name: Build with Maven
         run: |
@@ -508,7 +501,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.reporting-frameworks
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.reporting-frameworks
 
       - name: Build with Maven
         run: |
@@ -553,7 +546,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.quantity-observations
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.quantity-observations
 
       - name: Build with Maven
         run: |
@@ -598,7 +591,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.pools
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.pools
 
       - name: Build with Maven
         run: |
@@ -643,7 +636,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.party-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.party-types
 
       - name: Build with Maven
         run: |
@@ -688,7 +681,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.parties
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.parties
 
       - name: Build with Maven
         run: |
@@ -733,7 +726,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.locations
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.locations
 
       - name: Build with Maven
         run: |
@@ -778,7 +771,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.land-uses-flux-types-to-reporting-tables
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.land-uses-flux-types-to-reporting-tables
 
       - name: Build with Maven
         run: |
@@ -823,7 +816,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.land-uses-flux-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.land-uses-flux-types
 
       - name: Build with Maven
         run: |
@@ -868,7 +861,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.land-use-categories
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.land-use-categories
 
       - name: Build with Maven
         run: |
@@ -913,7 +906,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.fluxes-to-reporting-variables
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.fluxes-to-reporting-variables
 
       - name: Build with Maven
         run: |
@@ -958,7 +951,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.flux-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.flux-types
 
       - name: Build with Maven
         run: |
@@ -1003,7 +996,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.flux-reporting-results
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.flux-reporting-results
 
       - name: Build with Maven
         run: |
@@ -1048,7 +1041,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.emission-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.emission-types
 
       - name: Build with Maven
         run: |
@@ -1093,7 +1086,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.dates
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.dates
 
       - name: Build with Maven
         run: |
@@ -1138,7 +1131,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.databases
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.databases
 
       - name: Build with Maven
         run: |
@@ -1183,7 +1176,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.data-processor
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.data-processor
 
       - name: Build with Maven
         run: |
@@ -1228,7 +1221,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.data-aggregator
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.data-aggregator
 
       - name: Build with Maven
         run: |
@@ -1273,7 +1266,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.crf-tables
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.crf-tables
 
       - name: Build with Maven
         run: |
@@ -1318,7 +1311,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.cover-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.cover-types
 
       - name: Build with Maven
         run: |
@@ -1363,7 +1356,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.conversion-and-remaining-periods
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.conversion-and-remaining-periods
 
       - name: Build with Maven
         run: |
@@ -1408,7 +1401,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.accountability-types
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.accountability-types
 
       - name: Build with Maven
         run: |
@@ -1453,7 +1446,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: ${{ env.REGISTRY }}/moja-global/flint_reporting.accountability-rules
+          images: ${{ env.REGISTRY }}/harshcasper/flint_reporting.accountability-rules
 
       - name: Build with Maven
         run: |
